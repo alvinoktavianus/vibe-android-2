@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layered_login_background"
+    android:overScrollMode="never">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="79dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_vibe_login" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:theme="@style/VibeInputWhite">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edit_text_login_email"
+                style="@style/VibeEditText.SingleLine.White.Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email_address" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/VibeInputWhite">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edit_text_login_password"
+                style="@style/VibeEditText.SingleLine.White.Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/string_password" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_check_in"
+            style="@style/VibeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_check_in"
+            android:text="@string/string_check_in"
+            android:textColor="@color/vibePurpleLight" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_check_in_with_google"
+            style="@style/VibeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_check_in"
+            android:text="@string/string_check_in_with_google" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_check_in_with_facebook"
+            style="@style/VibeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_check_in"
+            android:text="@string/string_check_in_with_facebook" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_browse_as_tourist"
+            style="@style/VibeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_check_in_as_tourist"
+            android:text="@string/string_browse_as_tourist"
+            android:textColor="@android:color/white" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_forgot_password"
+            style="@style/BackgroundlessButton.RegisterForgetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/text_forgot_passord" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_register_new_account"
+            style="@style/BackgroundlessButton.RegisterForgetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/text_register_account" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</ScrollView>

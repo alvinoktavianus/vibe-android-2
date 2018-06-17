@@ -1,11 +1,231 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="VibeMainTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/vibePurpleLight</item>
+        <item name="colorPrimaryDark">@color/vibePurpleDark</item>
+        <item name="colorAccent">@color/vibePurpleDark</item>
+    </style>
+
+    <style name="VibeStoryDetailTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/darkGrey500</item>-->
+        <!--<item name="colorPrimaryDark">@color/darkGrey800</item>-->
+        <item name="colorAccent">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="VibeMainTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="VibeEditText">
+        <item name="android:textSize">@dimen/vibe_default_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik</item>-->
+        <item name="android:minLines">1</item>
+    </style>
+
+    <style name="VibeEditText.MultiLines">
+        <item name="android:maxLines">5</item>
+        <item name="android:minLines">3</item>
+        <item name="android:lines">3</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:gravity">top</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+
+    <style name="VibeEditText.SingleLine">
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="VibeTextView">
+        <item name="android:textSize">@dimen/vibe_default_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik</item>-->
+        <item name="android:lineSpacingExtra">@dimen/vibe_default_line_spacing</item>
+    </style>
+
+    <style name="VibeTextViewAbout">
+        <item name="android:lineSpacingExtra">@dimen/vibe_small_line_spacing</item>
+        <item name="android:textSize">@dimen/vibe_default_text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="VibeTextView.Small">
+        <item name="android:textSize">@dimen/vibe_small_text_size</item>
+    </style>
+
+    <style name="VibeTextView.ExtraSmall">
+        <item name="android:textSize">@dimen/vibe_extra_small_text_size</item>
+    </style>
+
+    <style name="VibeTextView.Large">
+        <item name="android:textSize">@dimen/vibe_default_heading_5_text_size</item>
+    </style>
+
+    <style name="VibeTextView.Header">
+        <item name="android:textSize">@dimen/vibe_large_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik_medium_font</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="VibeTextView.Settings">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="VibeTextView.Medium">
+        <!--<item name="android:fontFamily">@font/rubik_medium_font</item>-->
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="VibeTextView.Medium.Black">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="VibeTextView.Medium.Black.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="VibeEditText.SingleLine.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="VibeEditText.SingleLine.White.Email">
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="VibeEditText.SingleLine.White.Password">
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="VibeTextView.Large.FollowerAndPostCount">
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="VibeTextView.Small.FollowerAndPostText">
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="VibeButton">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik_medium_font</item>-->
+    </style>
+
+    <style name="VibeInputWhite" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+    <style name="BackgroundlessButton">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik</item>-->
+    </style>
+
+    <style name="BackgroundlessButton.RegisterForgetPassword">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="VibeToolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="VibeToolbarSolid" parent="Widget.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
+    <style name="VibeToolbarStoryDetail" parent="Widget.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="VibeToolbarText" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="SubTitleHomeFragment">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/vibe_default_heading_5_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+    </style>
+
+    <style name="VibeCard" parent="CardView">
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="VibeCard.Propagate">
+        <!--<item name="cardBackgroundColor">@color/vibeGrey</item>-->
+    </style>
+
+    <style name="VibeRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:textSize">@dimen/vibe_default_text_size</item>
+        <!--<item name="android:fontFamily">@font/rubik</item>-->
+    </style>
+
+    <style name="VibeTextView.ProfileName">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:lineSpacingExtra">1dp</item>
+        <item name="android:textSize">@dimen/vibe_small_text_size</item>
+    </style>
+
+    <style name="VibeTextView.Ellipsize">
+        <item name="android:minLines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:scrollHorizontally">false</item>
+    </style>
+
+    <style name="VibeTextView.Ellipsize.CardDisplayName">
+        <!--<item name="android:textColor">@color/vibeOrangeDisplayName</item>-->
+        <item name="android:textSize">@dimen/vibe_small_text_size</item>
+    </style>
+
+    <style name="VibeTextView.Ellipsize.CardPostTitle">
+        <item name="android:minLines">2</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">@dimen/vibe_large_text_size</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+    </style>
+
+    <style name="VibeTextView.Ellipsize.ProfileDescription">
+        <item name="android:maxLines">2</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:textColor">#777</item>
+        <item name="android:textSize">@dimen/vibe_small_text_size</item>
+    </style>
+
+    <style name="VibeTextView.Ellipsize.ProfileUsername">
+        <!--<item name="android:fontFamily">@font/barlow</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/vibe_default_heading_5_text_size</item>
+    </style>
+
+    <style name="VibeTextView.ExtraSmall.DateCreated">
+        <item name="android:textColor">#c5c5c5</item>
+    </style>
+
+    <style name="VibeTextView.Small.NotificationShortDescription">
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
 </resources>

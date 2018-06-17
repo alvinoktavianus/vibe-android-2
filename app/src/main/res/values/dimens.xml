@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_radius">5dp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_stroke">1dp</dimen>
+
+    <dimen name="layout_wrapper_padding">10dp</dimen>
+
+    <dimen name="vibe_default_text_size">16sp</dimen>
+    <dimen name="vibe_large_text_size">18sp</dimen>
+    <dimen name="vibe_small_text_size">14sp</dimen>
+    <dimen name="vibe_extra_small_text_size">14sp</dimen>
+    <dimen name="vibe_default_line_spacing">8sp</dimen>
+    <dimen name="vibe_small_line_spacing">5sp</dimen>
+    <dimen name="vibe_extra_small_line_spacing">3sp</dimen>
+    <dimen name="vibe_default_heading_5_text_size">24sp</dimen>
+    <dimen name="vibe_default_heading_4_text_size">34sp</dimen>
+
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <dimen name="card_corner_radius">7dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+
+    <dimen name="explore_profile_height">100dp</dimen>
+    <dimen name="recycler_photo">80dp</dimen>
+</resources>

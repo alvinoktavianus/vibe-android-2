@@ -1,3 +1,148 @@
 <resources>
     <string name="app_name">Vibe</string>
+
+    <string name="text_forgot_passord">Forgot your <b>password</b>&#63;</string>
+    <string name="text_register_account">Haven\'t register yet&#63; <b>Create account</b></string>
+
+    <string name="main_menu_home">Home</string>
+    <string name="main_menu_explore">Explore</string>
+    <string name="main_menu_add">Add</string>
+    <string name="main_menu_notification">Notification</string>
+    <string name="main_menu_profile">Profile</string>
+
+    <string name="file_authority">com.quirckymissioncontrol.vibe.fileprovider</string>
+
+    <string name="string_forgot_password">Forgot Your Password&#63;</string>
+    <string name="string_password">Password</string>
+    <string name="string_register_activity">Register</string>
+    <string name="string_register_with_facebook">Register with Facebook</string>
+    <string name="string_register_with_twitter">Register with Twitter</string>
+    <string name="string_submit">Submit</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="string_done">Done</string>
+    <string name="string_add_text">Add Text</string>
+    <string name="string_next">Next</string>
+    <string name="string_propagate_vibe">Propagate Your Vibe</string>
+    <string name="string_write_caption">Write Caption</string>
+    <string name="string_invite_to_collab">Invite to Collab</string>
+    <string name="string_add_page">&#43; Add Page</string>
+    <string name="string_in_thing">In-thing</string>
+    <string name="string_neighboring_vibe">Neighboring Vibe</string>
+    <string name="string_latest_stories">Latest stories</string>
+    <string name="string_skip_tutorial">Skip Tutorial</string>
+    <string name="string_all_set">All set! &gt;</string>
+    <string name="string_published_vibes">Published Vibes</string>
+    <string name="string_published">PUBLISHED</string>
+    <string name="string_drafts">DRAFTS</string>
+    <string name="string_drafts_sentence">Drafts</string>
+    <string name="string_stories">Stories</string>
+    <string name="string_followers">Followers</string>
+    <string name="string_unpublished">Unpublished</string>
+    <string name="string_edit">Edit</string>
+    <string name="string_back">Back</string>
+    <string name="string_finishing">Finishing</string>
+    <string name="string_radiate">Radiate!</string>
+    <string name="string_make_cover">Make Cover</string>
+    <string name="string_make_last">Make Last</string>
+    <string name="string_save">Save</string>
+    <string name="string_discard">Discard</string>
+    <string name="string_settings">Settings</string>
+    <string name="string_terms_conditions">Terms &amp; Conditions</string>
+    <string name="string_about_vibe">About Vibe</string>
+    <string name="string_notification_settings">Notification Settings</string>
+    <string name="string_likes">Likes</string>
+    <string name="string_comments">Comments</string>
+    <string name="string_from_friends">From Friends</string>
+    <string name="string_from_anonymous">From Anonymous</string>
+    <string name="string_from_all">From All</string>
+    <string name="string_change_password">Change Password</string>
+    <string name="string_apply">Apply</string>
+    <string name="string_help_feedback">Help &amp; Feedback</string>
+    <string name="string_rate_us">Rate Us</string>
+    <string name="string_submit_rating">Submit Rating</string>
+    <string name="string_upload_cover">Upload cover</string>
+    <string name="string_enable_comments">Enable Comments</string>
+    <string name="string_check_in">Check In</string>
+    <string name="string_check_in_with_google">Check In With Google</string>
+    <string name="string_check_in_with_facebook">Check In With Facebook</string>
+    <string name="string_browse_as_tourist">Browse as Tourist</string>
+    <string name="string_loading">Loading…</string>
+    <string name="string_no_data">No Data</string>
+    <string name="string_vibe">VIBE</string>
+    <string name="string_profile">PROFILE</string>
+    <string name="string_search">Search</string>
+    <string name="string_register_with_google">Register with Google</string>
+    <string name="string_edit_profile">Profile</string>
+    <string name="string_address">Address</string>
+    <string name="string_please_register">Please register to VIBE</string>
+    <string name="string_ok">OK</string>
+    <string name="string_please_re_login">Please re-login</string>
+    <string name="string_please_allow_permission">Please allowed the required permission</string>
+    <string name="string_select_image_source">Select image source</string>
+    <string name="string_exit_vibe">Are you sure you want to exit VIBE&#63;</string>
+    <string name="string_yes">Yes</string>
+    <string name="string_no">No</string>
+    <string name="string_triple_dot">…</string>
+    <string name="string_page_number">%1$d / %2$d</string>
+    <string name="string_update">Update</string>
+    <string name="string_min_chars">Minimum characters is %1$d</string>
+    <string name="string_no_empty_page">Please make sure that there is no blank page</string>
+    <string name="string_display_name_with_username">%1$s (@%2$s)</string>
+    <string name="string_logout_message">Are you sure to logout ?</string>
+    <string name="string_logout">Logout</string>
+    <string name="string_reply">Reply</string>
+
+    <string name="hint_email_address">Email address</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_real_name">Real name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_retype_password">Retype password</string>
+    <string name="hint_propagate_vibe_page">Tap to Add images, texts\nor sound</string>
+    <string name="hint_finishing_cover">Tap to add a cover image\nMin. dimension is 720x480 px</string>
+    <string name="hint_write_caption_here"><i>Write your creative caption here</i></string>
+    <string name="hint_tag"><i>Tag</i></string>
+    <string name="hint_old_password">Old password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_retype_new_password">Re-type new password</string>
+    <string name="hint_write_comment"><i>Write comment</i></string>
+    <string name="hint_description">Description</string>
+
+    <string name="text_forgot_password_description">Please submit your email used for your Vibe account. An email will be sent to your corresponding email which contains a reset link for your password.</string>
+    <string name="text_dialog_save_or_discard">Would you like to save your story or just discard it?</string>
+    <string name="text_help_feedback">Look for the topics regarding your troubles with our app right here. If you would like to reach us further or have feedbacks about Vibe, please reach us out at <b>help@vibeapp.com</b>.</string>
+    <string name="text_satisfaction">Are you satisfied with our service?</string>
+    <string name="text_notification_follow">&lt;b>%1$s&lt;/b> followed you</string>
+    <string name="text_notification_like">&lt;b>%1$s&lt;/b> liked your %2$s</string>
+    <string name="text_notification_comment">&lt;b>%1$s&lt;/b> commented on your %2$s</string>
+    <string name="text_about_vibe">Ah, the technical interview. Nothing like it. Not only does it cause anxiety, but it causes anxiety for several different reasons.
+        \n\nHow many people will be asking questions? From experience I can tell you there’s nothing like walking into a room and seeing nine people on the other side of the table.   Second, what will you be asked? You’ll sometimes hear people say the questions they were asked in a technical interview were “easy”, which translated means “they asked me stuff I happened to know”.
+        \n\nSometimes you’ll hear people say the questions were “hard”, which translated means “they asked me stuff I didn’t know”, or “they asked me about stuff I’ve never even heard of”.
+        \n\nHaving been on both sides of the technical interview table, I’d like to share some tips for those being interviewed. In doing so, I’ll share some of the more memorable interviews I’ve been involved in.
+        \n\nNo good interviewer expects you to know everything. The problem is, you’re not always going to be interviewed by someone who’s good at it.   Sometimes, the person who’s giving you a technical interview was asked to do it about ten minutes before you showed up.  Maybe they’ve never interviewed anyone before, or maybe they’re just in a bad mood.  I’ve heard of technical interviewers where the interviewer derided an answer, and that’s totally unprofessional. I’ve had many a job candidate give a bad answer to a question, and my only response was silence followed by moving on to the next question. If your interviewer mocks any of your answers, you didn’t want to work there anyway.
+        \n\nNone of us know everything.  If you’re asked a question you just don’t know the answer to, don’t try to BS your way past it.  This is a good opportunity to tell the interviewer how you would research that particular question. It’s not about knowing everything, it’s about being able to find out anything.
+        \n\nIf your interviewer acts like he/she already dislikes you, that’s because they do.  I once worked with a technician who felt threatened by anyone who applied for a job there, but especially if the applicant had a professional certification and then had the nerve to know what they were doing.
+        \n\nThis technician participated in a group technical interview where the applicant was an incredibly bright guy, and had a particular skill that the department really needed.  Problem was, the technician considered himself “the man” when it came to that skill. Recipe for disaster, right?
+        \n\nThe applicant fielded four questions from the rest of us flawlessly, then faced this particular tech for a question. The threatened tech had a list of questions for the interview, but decided to ad lib. Big mistake. He asked a convoluted question that Rube Goldberg would have been proud of. When he was done, the applicant answered:
+        \n\n“You can’t do what you just described.”
+        \n\nThe tech started defending his question, and it became obvious that he hadn’t been able to follow his own question! The interview went into a bit of a meltdown from there.
+        \n\nRealize right now that there are some unprofessional people out there giving technical interviews. Be prepared for it, but remain professional yourself.
+        \n\nBe prepared for a practical technical interview. The best technical interviewers find a way to get you in front of the technology you’ll be working with. A great way to quickly find out whether you know what you’re talking about is to ask you to actually perform common and perhaps some not-so-common tasks.  We can talk about technology and take all the computer-based exams we want, but it all comes down to performance. Be prepared to prove you belong on your interview day.
+        \n\nBe professional.  This covers a lot of ground, so let me make a quick list for you.
+        \n\nShow up 15 minutes early. Nothing makes a technical interviewer more surly than waiting for the applicant.
+        \n\nDress for success.  The way you look when you walk into a room leads to your interviewer’s first impression of you.
+        \n\nDon’t chew gum during the interview.
+        \n\nDon’t be arrogant.  Look, there’s nothing wrong with having an ego and acting confident. I do, and you should. But don’t come into the interview room acting like you’re too good to be there.
+        \n\nFinally, relax. Easy to say, hard to do? Not really. Realize that the majority of interviewers you’ll ever meet are going to be professional about the entire thing. The world’s not going to end if you miss a question. If you were not qualified on paper for the job, you wouldn’t be in there.
+        \n\nDo not look upon the interview as something negative. Rather, look at it as an opportunity to prove you know what you’re talking about. With the proper mental attitude, your technical interview will be a springboard to the next step in your career!
+        \n\nChris Bryant</string>
+    <string name="text_terms_and_conditions">If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps even your home office combo? First off, you will need to set a budget for your new purchase before deciding whether to shop for notebook or desktop computers. Many offices use desktop computers because they are not intended to be moved around a lot. In addition, affordability often plays a large role in someone’s decision as to whether to purchase notebook or desktop computers.
+        \n\nWhile you are shopping around, it’s important to keep in mind some of the benefits that go along with owning different types of computers. To that end, this article provides five important reasons to purchase desktop computers.
+        \n\n&#8212; Desktop computers are typically much more affordable than notebook computers. With notebooks, you are paying more for the convenience of portability. For as little as $299.00, desktop computers can be purchased from one of the leading manufacturers and a notebook computer for as little as $499.00
+        \n\n&#8212; Unlike notebook computers, replacing a keyboard, mouse, speakers or even a monitor does not require having your computer serviced by a professional repair shop. Because notebook computers have everything built in, including the aforementioned features, it is more difficult to replace a keyboard or monitor as opposed to desktop computers, which operate on external connections.
+        \n\n&#8212; In the event of an unlawful entry into your home, desktop computers are not as likely to be stolen because of their weight and bulk. Notebook computers, on the other hand, are small and portable. This, alone, makes them more appealing to a thief than desktop computers.
+        \n\n&#8212; Desktop computers are stationary by nature. Unlike a notebook computer, which can easily be moved from room to room, they are less likely to be dropped or broken because they are not moved as often.
+        \n\n&#8212; The vents on desktop computers are located on the back of the tower, which allows for proper ventilation that will help to prevent the computer from overheating. Notebook computers, on the other hand, feature only one vent on the back with the remaining underneath the base. If placed on a table, the air vents can become blocked and the computer may overheat. If prolonged use leads to overheating, damage may result.
+        \n\nWhen choosing from the many desktop computers on the market, always make sure that you purchase from a manufacturer who has experience in creating computers. Even though they are more affordable than notebooks, desktop computers are not cheap. With an investment that involves several hundred dollars, you will want to consider the length of time the manufacturer has been in business, their reputation with customers and their warranty.
+        \n\nAdditionally, when choosing any system, including desktop computers, always look at the potential for future upgrading. As you grow, you will want your computer to grow with you and a part of that will include a slight upgrade from time to time. This is the only way to get the best use of your desktop computers and make sure that your investment is one that lasts for years to come.</string>
+
 </resources>

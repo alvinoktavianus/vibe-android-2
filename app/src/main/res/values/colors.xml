@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="vibePurpleDark">#48239C</color>
+    <color name="vibePurpleLight">#9C237C</color>
+
 </resources>
