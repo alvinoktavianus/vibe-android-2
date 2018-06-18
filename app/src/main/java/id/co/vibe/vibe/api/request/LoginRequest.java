@@ -14,4 +14,20 @@ public class LoginRequest {
         this.deviceToken = deviceToken;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public String getDeviceToken() {
+        return deviceToken;
+    }
+
 }

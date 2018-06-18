@@ -1,17 +1,12 @@
 package id.co.vibe.vibe.base;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
 public class BaseResponse {
-    private String code;
-    private String message;
-
-    public BaseResponse() {
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
+    String code;
+    String message;
+    String type;
 }

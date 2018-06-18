@@ -6,4 +6,17 @@ package id.co.vibe.vibe.base;
  */
 
 public interface BaseView {
+    void showToast(String message);
+
+    void hideKeyboard();
+
+    void showProgressDialog();
+
+    void hideProgressDialog();
+
+    void showAlertDialogWithOkButtonAndNullClickListener(String message);
+
+    void goToLoginActivity();
+
+    void goToMainActivity();
 }

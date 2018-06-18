@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import javax.inject.Named;
 import javax.inject.Singleton;
 
@@ -56,6 +58,12 @@ public class ApplicationModule {
     @Named("serverUrl")
     String providesServerUrl() {
         return BuildConfig.SERVER_URL;
+    }
+
+    @Provides
+    @Singleton
+    FirebaseAnalytics providesFirebaseAnalytics(Application application) {
+        return FirebaseAnalytics.getInstance(application);
     }
 
 }

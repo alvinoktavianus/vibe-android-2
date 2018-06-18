@@ -13,4 +13,12 @@ interface LoginView extends BaseView {
 
     void onClickCheckInWithGoogle();
 
+    void onClickCheckInWithFacebook();
+
+    void onClickRegister();
+
+    void onClickBrowseAsTourist();
+
+    void onClickForgotPassword();
+
 }

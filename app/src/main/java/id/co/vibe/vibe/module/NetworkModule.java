@@ -9,7 +9,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import id.co.vibe.vibe.BuildConfig;
 import id.co.vibe.vibe.api.VibeApi;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -89,7 +88,7 @@ public class NetworkModule {
         if (isDebug) {
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         } else {
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
         }
         return httpLoggingInterceptor;
     }

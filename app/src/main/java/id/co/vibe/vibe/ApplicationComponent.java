@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import id.co.vibe.vibe.module.ApplicationModule;
 import id.co.vibe.vibe.module.NetworkModule;
+import id.co.vibe.vibe.module.UtilityModule;
 import id.co.vibe.vibe.ui.activity.login.LoginModule;
 import id.co.vibe.vibe.ui.activity.login.LoginSubComponent;
 
@@ -17,6 +18,7 @@ import id.co.vibe.vibe.ui.activity.login.LoginSubComponent;
 @Component(modules = {
         ApplicationModule.class,
         NetworkModule.class,
+        UtilityModule.class,
 })
 public interface ApplicationComponent {
     LoginSubComponent plus(LoginModule loginModule);

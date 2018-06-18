@@ -5,18 +5,20 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.AppCompatEditText;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.co.vibe.vibe.R;
 import id.co.vibe.vibe.VibeApplication;
+import id.co.vibe.vibe.api.request.LoginRequest;
 import id.co.vibe.vibe.base.BaseActivity;
+import id.co.vibe.vibe.util.SharedPreferenceDB;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by alvinoktavianus (https://www.linkedin.com/in/alvinoktavianus)
@@ -25,11 +27,14 @@ import id.co.vibe.vibe.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private String deviceToken;
+
     @Inject
     LoginPresenter presenter;
 
-    @BindString(R.string.string_loading)
-    String stringLoading;
+    @Inject
+    SharedPreferenceDB db;
 
     @Inject
     @Named("appId")
@@ -57,6 +62,15 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         presenter.unbind();
+        compositeDisposable.dispose();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (db.checkIfDataExistsOnDB()) {
+            super.goToMainActivity();
+        }
     }
 
     @Override
@@ -64,6 +78,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        deviceToken = FirebaseInstanceId.getInstance().getToken();
     }
 
     @Override
@@ -79,12 +94,42 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     @OnClick(R.id.button_check_in)
     public void onClickCheckIn() {
+        LoginRequest loginRequest = new LoginRequest(
+                mEditTextEmail.getText().toString().trim(),
+                mEditTextPassword.getText().toString().trim(),
+                appId,
+                deviceToken
+        );
+        presenter.handleCheckInButton(loginRequest);
     }
 
     @Override
     @OnClick(R.id.button_check_in_with_google)
     public void onClickCheckInWithGoogle() {
-        Crashlytics.getInstance().crash();
+    }
+
+    @Override
+    @OnClick(R.id.button_check_in_with_facebook)
+    public void onClickCheckInWithFacebook() {
+
+    }
+
+    @Override
+    @OnClick(R.id.button_register_new_account)
+    public void onClickRegister() {
+
+    }
+
+    @Override
+    @OnClick(R.id.button_browse_as_tourist)
+    public void onClickBrowseAsTourist() {
+        super.goToMainActivity();
+    }
+
+    @Override
+    @OnClick(R.id.button_forgot_password)
+    public void onClickForgotPassword() {
+
     }
 
 }
