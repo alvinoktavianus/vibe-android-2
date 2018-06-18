@@ -9,6 +9,9 @@ import id.co.vibe.vibe.module.ApplicationModule;
 import id.co.vibe.vibe.module.NetworkModule;
 import id.co.vibe.vibe.ui.activity.login.LoginModule;
 import id.co.vibe.vibe.ui.activity.login.LoginSubComponent;
+import id.co.vibe.vibe.ui.activity.main.MainSubComponent;
+import id.co.vibe.vibe.ui.fragment.home.HomeModule;
+import id.co.vibe.vibe.ui.fragment.home.HomeSubComponent;
 import timber.log.Timber;
 
 
@@ -21,6 +24,8 @@ public class VibeApplication extends Application {
 
     private static ApplicationComponent component;
     private LoginSubComponent loginSubComponent;
+    private MainSubComponent mainSubComponent;
+    private HomeSubComponent homeSubComponent;
 
     @Override
     public void onCreate() {
@@ -70,6 +75,36 @@ public class VibeApplication extends Application {
 
     public void releaseLoginSubComponent() {
         loginSubComponent = null;
+    }
+
+    public MainSubComponent getMainSubComponent() {
+        if (mainSubComponent == null)
+            createMainSubComponent();
+        return mainSubComponent;
+    }
+
+    public MainSubComponent createMainSubComponent() {
+        mainSubComponent = component.plus();
+        return mainSubComponent;
+    }
+
+    public void releaseMainSubComponent() {
+        mainSubComponent = null;
+    }
+
+    public HomeSubComponent getHomeSubComponent() {
+        if (homeSubComponent == null)
+            createHomeSubComponent();
+        return homeSubComponent;
+    }
+
+    public HomeSubComponent createHomeSubComponent() {
+        homeSubComponent = component.plus(new HomeModule());
+        return homeSubComponent;
+    }
+
+    public void releaseHomeSubComponent() {
+        homeSubComponent = null;
     }
 
 }

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class BaseResponse {
-    String code;
+    Integer code;
     String message;
     String type;
 }

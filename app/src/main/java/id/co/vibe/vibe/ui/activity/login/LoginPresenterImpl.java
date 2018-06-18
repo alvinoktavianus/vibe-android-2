@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import javax.inject.Inject;
 
+import id.co.vibe.vibe.api.VibeApi;
 import id.co.vibe.vibe.api.request.LoginRequest;
 import id.co.vibe.vibe.base.BaseResponse;
 import id.co.vibe.vibe.util.SharedPreferenceDB;
@@ -11,22 +12,23 @@ import id.co.vibe.vibe.util.Validation;
 import id.co.vibe.vibe.util.VibeGsonSerializer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.HttpException;
 
 public class LoginPresenterImpl implements LoginPresenter {
     private LoginView view;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    private LoginInteractor interactor;
+    private VibeApi vibeApi;
     private Validation validation;
     private SharedPreferenceDB sharedPreferenceDB;
     private VibeGsonSerializer vibeGsonSerializer;
 
     @Inject
-    LoginPresenterImpl(LoginInteractor interactor,
+    LoginPresenterImpl(VibeApi vibeApi,
                        Validation validation,
                        SharedPreferenceDB sharedPreferenceDB,
                        VibeGsonSerializer vibeGsonSerializer) {
-        this.interactor = interactor;
+        this.vibeApi = vibeApi;
         this.validation = validation;
         this.sharedPreferenceDB = sharedPreferenceDB;
         this.vibeGsonSerializer = vibeGsonSerializer;
@@ -63,11 +65,13 @@ public class LoginPresenterImpl implements LoginPresenter {
 
         view.showProgressDialog();
         compositeDisposable.add(
-                interactor.doEmailPasswordLogin(loginRequest)
+                vibeApi.login(loginRequest)
+                        .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(loginResponse -> {
                             view.hideProgressDialog();
                             view.showToast((String) TextUtils.concat("Welcome back, ", loginResponse.getData().getDisplayName()));
+                            sharedPreferenceDB.save(SharedPreferenceDB.DB_IS_LOGGED_IN, true);
                             sharedPreferenceDB.save(SharedPreferenceDB.DB_ACCESS_TOKEN_KEY, loginResponse.getData().getAccessToken());
                             sharedPreferenceDB.save(SharedPreferenceDB.DB_REFRESH_TOKEN_KEY, loginResponse.getData().getRefreshToken());
                             view.goToMainActivity();

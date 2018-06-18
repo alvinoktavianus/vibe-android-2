@@ -8,6 +8,9 @@ import id.co.vibe.vibe.module.NetworkModule;
 import id.co.vibe.vibe.module.UtilityModule;
 import id.co.vibe.vibe.ui.activity.login.LoginModule;
 import id.co.vibe.vibe.ui.activity.login.LoginSubComponent;
+import id.co.vibe.vibe.ui.activity.main.MainSubComponent;
+import id.co.vibe.vibe.ui.fragment.home.HomeModule;
+import id.co.vibe.vibe.ui.fragment.home.HomeSubComponent;
 
 /**
  * Created by alvinoktavianus (https://www.linkedin.com/in/alvinoktavianus)
@@ -22,4 +25,8 @@ import id.co.vibe.vibe.ui.activity.login.LoginSubComponent;
 })
 public interface ApplicationComponent {
     LoginSubComponent plus(LoginModule loginModule);
+
+    MainSubComponent plus();
+
+    HomeSubComponent plus(HomeModule homeModule);
 }

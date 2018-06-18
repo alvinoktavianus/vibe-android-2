@@ -12,10 +12,4 @@ public class LoginModule {
         return presenter;
     }
 
-    @Provides
-    @Login
-    LoginInteractor providesLoginInteractor(LoginInteractorImpl interactor) {
-        return interactor;
-    }
-
 }
