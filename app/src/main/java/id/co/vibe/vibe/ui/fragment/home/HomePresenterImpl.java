@@ -6,18 +6,19 @@ import javax.inject.Named;
 import id.co.vibe.vibe.api.request.RefreshTokenRequest;
 import id.co.vibe.vibe.constant.ApiConstant;
 import id.co.vibe.vibe.merge.HomeMergeResponse;
+import id.co.vibe.vibe.provider.SchedulerProvider;
 import id.co.vibe.vibe.util.SharedPreferenceDB;
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import timber.log.Timber;
 
 class HomePresenterImpl implements HomePresenter {
     private HomeView view;
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private CompositeDisposable compositeDisposable;
     private String accessToken;
     private String refreshToken;
     private RefreshTokenRequest refreshTokenRequest;
+    private SchedulerProvider schedulerProvider;
 
     private SharedPreferenceDB db;
     private HomeInteractor interactor;
@@ -25,9 +26,13 @@ class HomePresenterImpl implements HomePresenter {
     @Inject
     HomePresenterImpl(SharedPreferenceDB db,
                       HomeInteractor interactor,
-                      @Named("appId") String appId) {
+                      @Named("appId") String appId,
+                      SchedulerProvider schedulerProvider,
+                      CompositeDisposable compositeDisposable) {
         this.db = db;
         this.interactor = interactor;
+        this.schedulerProvider = schedulerProvider;
+        this.compositeDisposable = compositeDisposable;
 
         accessToken = db.getAccessToken();
         refreshToken = db.getString(SharedPreferenceDB.DB_REFRESH_TOKEN_KEY);
@@ -59,7 +64,7 @@ class HomePresenterImpl implements HomePresenter {
         );
 
         compositeDisposable.add(
-                combines.observeOn(AndroidSchedulers.mainThread())
+                combines.observeOn(schedulerProvider.mainThread())
                         .subscribe(homeMergeResponse -> {
                             Timber.d("Returned data %s", homeMergeResponse.getInThingStory().toString());
                         })

@@ -14,6 +14,7 @@ import id.co.vibe.vibe.base.BaseResponse;
 import id.co.vibe.vibe.constant.ApiConstant;
 import id.co.vibe.vibe.model.InThing;
 import id.co.vibe.vibe.model.LatestAndNeighboring;
+import id.co.vibe.vibe.provider.SchedulerProvider;
 import id.co.vibe.vibe.util.SharedPreferenceDB;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -21,11 +22,15 @@ import io.reactivex.schedulers.Schedulers;
 class HomeInteractorImpl implements HomeInteractor {
     private VibeApi vibeApi;
     private SharedPreferenceDB db;
+    private SchedulerProvider schedulerProvider;
 
     @Inject
-    HomeInteractorImpl(VibeApi vibeApi, SharedPreferenceDB db) {
+    HomeInteractorImpl(VibeApi vibeApi,
+                       SharedPreferenceDB db,
+                       SchedulerProvider schedulerProvider) {
         this.vibeApi = vibeApi;
         this.db = db;
+        this.schedulerProvider = schedulerProvider;
     }
 
     @Override
@@ -49,7 +54,7 @@ class HomeInteractorImpl implements HomeInteractor {
                         return Observable.just(transformStoryResponseToTarget(response));
                     }
                 })
-                .subscribeOn(Schedulers.computation());
+                .subscribeOn(schedulerProvider.computationThread());
     }
 
     @Override
@@ -73,7 +78,7 @@ class HomeInteractorImpl implements HomeInteractor {
                         return Observable.just(transformStoryResponseToTarget(storyResponse));
                     }
                 })
-                .subscribeOn(Schedulers.computation());
+                .subscribeOn(schedulerProvider.computationThread());
     }
 
     @Override
@@ -107,7 +112,7 @@ class HomeInteractorImpl implements HomeInteractor {
                         return Observable.just(transformInThingResponseToTarget(inThingStoryResponse));
                     }
                 })
-                .subscribeOn(Schedulers.computation());
+                .subscribeOn(schedulerProvider.computationThread());
     }
 
     private InThing transformInThingResponseToTarget(InThingStoryResponse response) {

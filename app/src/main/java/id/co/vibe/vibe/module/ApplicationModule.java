@@ -12,6 +12,9 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import id.co.vibe.vibe.BuildConfig;
+import id.co.vibe.vibe.provider.AppSchedulerProvider;
+import id.co.vibe.vibe.provider.SchedulerProvider;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by alvinoktavianus (https://www.linkedin.com/in/alvinoktavianus)
@@ -64,6 +67,17 @@ public class ApplicationModule {
     @Singleton
     FirebaseAnalytics providesFirebaseAnalytics(Application application) {
         return FirebaseAnalytics.getInstance(application);
+    }
+
+    @Provides
+    @Singleton
+    SchedulerProvider providesSchedulerProvider() {
+        return new AppSchedulerProvider();
+    }
+
+    @Provides
+    CompositeDisposable providesCompositeDisposable() {
+        return new CompositeDisposable();
     }
 
 }

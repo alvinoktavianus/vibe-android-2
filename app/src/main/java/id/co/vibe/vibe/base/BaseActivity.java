@@ -24,6 +24,7 @@ import id.co.vibe.vibe.ui.activity.main.MainActivity;
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {
 
     protected ProgressDialog progressDialog;
+    protected Context context;
 
     @BindString(R.string.string_loading)
     String stringLoading;
@@ -75,7 +76,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             progressDialog = null;
         }
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setMessage(stringLoading);
@@ -90,7 +91,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     public void showAlertDialogWithOkButtonAndNullClickListener(String message) {
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(context)
                 .setCancelable(false)
                 .setMessage(message)
                 .setPositiveButton(stringOk, null)
@@ -100,7 +101,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     public void goToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         this.finish();

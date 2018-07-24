@@ -27,14 +27,14 @@ import io.reactivex.disposables.CompositeDisposable;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    private String deviceToken;
-
     @Inject
     LoginPresenter presenter;
 
     @Inject
     SharedPreferenceDB db;
+
+    @Inject
+    CompositeDisposable compositeDisposable;
 
     @Inject
     @Named("appId")
@@ -78,7 +78,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        deviceToken = FirebaseInstanceId.getInstance().getToken();
+        context = this;
     }
 
     @Override
@@ -94,6 +94,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     @OnClick(R.id.button_check_in)
     public void onClickCheckIn() {
+        String deviceToken = FirebaseInstanceId.getInstance().getToken();
         LoginRequest loginRequest = new LoginRequest(
                 mEditTextEmail.getText().toString().trim(),
                 mEditTextPassword.getText().toString().trim(),
